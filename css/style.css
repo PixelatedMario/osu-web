@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;700;900&display=swap');
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505;
+    color: #fff;
+    font-family: 'Exo 2', sans-serif;
+    overflow: hidden;
+    user-select: none;
+}
+
+#bg-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: 0;
+    transition: filter 0.3s;
+}
+
+#bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.hud-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 40px;
+    font-size: 32px;
+    font-weight: 700;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+.hud-center {
+    position: absolute;
+    bottom: 60px;
+    left: 40px;
+    font-size: 50px;
+    font-weight: 900;
+    color: #ffffff;
+    opacity: 0.8;
+}
+
+.progress-bar-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: rgba(255,255,255,0.1);
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0%;
+    background: #ff66aa;
+    transition: width 0.1s linear;
+}
+
+#menu-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    transition: opacity 0.5s;
+}
+
+.hidden {
+    display: none !important;
+}
+
+h1 {
+    font-size: 72px;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    background: linear-gradient(135deg, #ff66aa, #ffcc00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+h1 span {
+    font-weight: 300;
+    color: #fff;
+    -webkit-text-fill-color: #fff;
+}
+
+.settings-panel {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    display: flex;
+    gap: 20px;
+}
+
+.settings-panel label {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 14px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: #eee;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-family: inherit;
+    text-transform: uppercase;
+    transition: 0.2s;
+}
+
+.btn:hover:not(:disabled) {
+    background: #333;
+    border-color: #ff66aa;
+    transform: translateY(-2px);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-primary {
+    background: #ff66aa;
+    color: #000;
+    font-weight: 800;
+    font-size: 24px;
+    padding: 20px 60px;
+    border: none;
+    box-shadow: 0 0 20px rgba(255, 102, 170, 0.4);
+}
+
+.btn-secondary {
+    background: #44aaff;
+    color: #000;
+    font-weight: 800;
+    font-size: 20px;
+    padding: 15px 50px;
+    border: none;
+    margin-top: 10px;
+}
+
+.status-text {
+    color: #888;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="range"] {
+    width: 150px;
+}
