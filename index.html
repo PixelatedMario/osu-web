@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>osu!web</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.2.4/pixi.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+</head>
+<body>
+    <div id="bg-layer"></div>
+    <div id="bg-overlay"></div>
+    <canvas id="game-canvas"></canvas>
+    
+    <div id="ui-layer" class="hidden">
+        <div class="hud-top">
+            <div id="score">0000000</div>
+            <div id="accuracy">100.00%</div>
+        </div>
+        <div class="hud-center">
+            <div id="combo">0x</div>
+        </div>
+        <div class="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+    </div>
+    
+    <div id="menu-layer">
+        <h1>osu!web</span></h1>
+        
+        <div class="settings-panel">
+            <label>Background Dim: <input type="range" id="dim-slider" min="0" max="100" value="50"></label>
+            <label>Background Blur: <input type="range" id="blur-slider" min="0" max="20" value="0"></label>
+        </div>
+        
+        <div class="button-group">
+            <button class="btn" id="btn-skin">Import Skin (.osk)</button>
+            <button class="btn" id="btn-map">Import Map (.osz)</button>
+            <button class="btn" id="btn-replay" disabled>Import Replay (.osr)</button>
+        </div>
+        
+        <div id="status" class="status-text">Ready to import beatmap</div>
+        
+        <button id="play-btn" class="btn btn-primary hidden">PLAY MAP</button>
+        <button id="watch-btn" class="btn btn-secondary hidden">WATCH REPLAY</button>
+        
+        <input type="file" id="file-input-map" accept=".osz,.zip">
+        <input type="file" id="file-input-skin" accept=".osk,.zip">
+        <input type="file" id="file-input-replay" accept=".osr">
+    </div>
+    
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
